@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap" rel="stylesheet">
+    
+      <meta charset="utf-8">
+      <title~>LIQUID MILIEU~</title>
+  <style>
+    body {
+      background-color: #000000;
+   	   font-family: andale mono;
+      background-image: url("https://apod.nasa.gov/apod/image/2010/Arp273Main_HubblePestana_1080.jpg");
+      /* background-size: 1020p; */
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    
+    }
+    
+    a {
+      cursor: pointer;
+      text-decoration: none;
+
+      
+    }
+    
+    a:hover {
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: "Libre Barcode 39", cursive;
+      font-size: 45px;
+      color: rgb(92, 255, 51);
+    }
+    
+     h1{
+      
+      font-size: 45px;
+      font-weight: 400;
+       text-align: center;
+      -webkit-animation: glow 4s ease-in-out infinite alternate;
+  		-moz-animation: glow 4s ease-in-out infinite alternate;
+  		animation: glow 4s ease-in-out infinite alternate;
+       
+    }
+    
+    h3{
+      font-size: 20px;
+      font-weight: 500;
+    }
+    
+    @-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgb(100, 100, 100), 0 0 20px rgb(100, 100, 100), 0 0 10px rgb(100, 100, 100), 0 0 40px rgb(100, 100, 100), 0 0 10px rgbrgb(100, 100, 100), 0 0 60px rgbrgb(100, 100, 100), 0 0 10px rgbrgb(100, 100, 100);
+  }
+  to {
+    text-shadow: 0 0 20px rgb(0, 10, 100), 0 0 30px #ffffff, 0 0 40px rgb(92, 173, 51), 0 0 50px #ffffff, 0 0 10px rgb(92, 173, 51), 0 0 10px #fff, 0 0 80px #fff;
+  }
+}
+    .spacer{
+      height: 8vw;
+    }
+    
+    .button, #myButton {
+    background-color: rgb(0, 0, 0, 0);
+    border: 1px solid rgb(92, 255, 51);
+    color: #FFFFFF;
+    padding: 8px 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    width: 100%;
+    display: block;
+    font-family: monospace;
+       -webkit-animation: glow 4s ease-in-out infinite alternate;
+  		-moz-animation: glow 4s ease-in-out infinite alternate;
+  		animation: glow 4s ease-in-out infinite alternate;
+    }
+      
+  	
+    .button:hover, #myButton:hover {
+    background-color: rgb(0, 0, 0, 0);
+    border: 1px solid rgb(92, 255, 51);
+    color: rgb(92, 255, 51);
+    padding: 8px 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    width: 100%;
+    display: block;
+    font-family: "Libre Barcode 39", cursive;
+  		}
+    
+    .main{
+      background-color: #000000;
+      color: #FFFFFF;
+      width: 90%;
+      height: 550px;
+      margin: auto;
+      padding: 10px;
+      box-shadow: 0 5px 15px 0 rgb(92, 255, 51), 0 16px 20px 0 rgba(0, 0, 0, 0.8);
+      display: flex;
+      overflow: auto;
+      border-radius: 15px;
+      font-family: monospace;
+      font-size: 14px;
+
+    }
+    
+    
+    .header {
+     position: fixed;
+     left: 0;
+     top: 0;
+     width: 100%;
+     background-color: rgb(92, 255, 51);
+     color: #000000;
+     text-align: center;
+     z-index: 4;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     font-weight: 900;
+    font-family: monospace;
+    }
+  
+    .footer {
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: rgb(92, 255, 51);
+     color: #000000;
+     text-align: center;
+     font-family: monospace;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     font-weight: 900;
+     }
+    
+    .leftSide {
+      flex: 50%;
+      padding: 15px;
+      text-align: justify;
+      overflow-y: scroll;
+      overflow-x: hidden;
+       -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+    
+    .leftSide::-webkit-scrollbar {
+    display: none;
+  	}
+    
+    .rightSide{
+      flex: 50%;
+      padding: 15px;
+      text-align: justify;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+    
+    
+     .littleLeft{
+      flex: 30%;
+      padding: 15px;
+      text-align: justify;
+    }
+     .littleRight{
+      flex: 70%;
+      padding: 15px;
+      text-align: justify;
+    }
+    
+    /* SCROLL BAR COLOR */
+    /* width */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: rgb(92, 255, 51);
+      border-radius: 15px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #000000;
+      border: 1px solid rgb(92, 255, 51);
+      border-radius: 15px;
+      
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #000000; 
+      border-radius: 15px;
+    }
+    
+  div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+			  }
+     
+  hr.rounded {
+  border-top: 1px solid #FFF;
+  border-radius: 5px;
+}
+    
+    img {
+    max-width: 100%;
+    max-height: 100%;
+      border: 1px solid white;
+    }
+    
+    
+    @media only screen and (max-width: 600px) {
+      
+      .spacer{
+      height: 25vw;
+    }
+      
+    .main{
+  	
+      display: block ;
+      }
+      
+    .rightSide{
+    -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+    
+    .rightSide::-webkit-scrollbar {
+    display: none;
+  	}
+}
+    
+  </style>
+	</head>
+	<body> 
+    
+  <div class="header">
+   
+    </div>
+    <div class="spacer"></div>
+  <div class="main">
+
+    <div class="leftSide"><br><br>
+     
+      <h1>  LIQUID MILIEU  </h1>
+      
+      
+      <iframe width="100%" height="300px" src="https://www.youtube.com/embed/h60JluYWj6c?start=583" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br>
+      Students of VCU Art’s Video Concepts Class within the department of Kinetic Imaging are excited to present Liquid Milieu, an online screening of multimedia videos that explore supernatural, narrative, and abstract elements. Conversations within the works include intimacy, passion, finding our sense of self, as well as the power we have within ourselves. This exhibition is a galaxy; each student’s imagination is mashed together into a supernova blurred lines between method, making, and meaning. Experiencing the barrage of images becomes overwhelming at times and accents the diversity of perspectives and aesthetics. What discoveries can be made in the shared sea of wayfinding? We are a body of water.
+      <br><br>
+      
+    <center>
+     <button onclick="myFunction()" id="myButton" value="about the course">ABOUT THE COURSE</button>
+
+ <div style="display:none; text-align:justify; padding:13px 0px 0px 0px;" id="myDIV"> Writing for Film, Video, and Performance is an interdisciplinary studio that develops skills specific to the challenges of writing for time-based projects, especially works in film, video, installation, and performance. In Fall 2022 it was facilitated by <a href="https://www.shawnemichaelainholloway.com/" style="color:rgb(92, 255, 51);">SHAWNE MICHAELAIN HOLLOWAY</a> but it is typically taught by <a href="https://marypatten.com/home.html" style="color:rgb(92, 255, 51);">Mary Patten</a>. The primary focus is in-class writing, a range of textual experiments, and workshop /critique of students' writing in relation to their own works-in-progress. We pay attention to 'invisible' texts--the writing before the script, free-writing, conceptual issues--as well as overt ones. Special emphasis is placed on developing the ear in work on monologue, dialogue, and voice-over. The class reads and discusses selected scripts and writings by artists, screens films and videos, attends exhibitions and performances, and performs close analyses (another form of 'reading') of texts.
+</div>
+      
+    </center>
+      
+
+
+    </div>
+    <div class="rightSide">
+    <h3>PRESENTING WORK BY :<br><br>
+    
+          Hongjin Chen,
+          Khanh Mai Doan,
+          Lam Son Hoang,
+          Philipp Groth,
+          Madelaine Guthrie,
+          Elisabeth James,
+          Jazmyn Joi,
+          Kris Liu,
+          Meadow Meyer,
+          Jake Phillips,
+          Zihan Qiu,
+          Mo Gyeong Seong,
+          Hatem Shakkouf,
+          Lee Schulder &rarr;
+          Yezhou Zheng 
+      
+      <br><br></h3>
+      
+  <hr class="rounded"><br>
+      
+      <img src="HChen_Still.png" alt="still of a person wearing a dress in the dark, contrasted">
+      <h3>Hongjin Chen</h3> <br>Hongjin Chen is a filmmaker from China. She is currently studying at the School of the Art Institute of Chicago. Majored in film making and directing, and other art fields involved include photography, painting, sculpture, fiber, and art therapy. Most of her works are presented in different ways to reflect various social issues. She believes that every artwork needs to be thought-provoking, not just for making art.<br><br>
+      
+      <hr class="rounded"><br>
+      
+      <br><br><img src="BCNS_kmd_still.jpg" alt="abstract photo with - black coffee no sugar - written over it"><br>
+      <h3>Khanh Mai Doan</h3><br> Khanh Mai Doan was born in Ho Chi Minh City (HCMC), Vietnam in 2002. Despite not coming from a family with an art tradition, she soon found her interest in drawing at a very young age through reading comics and watching animated films. Throughout her time at AIS, a bilingual school where she studied for 10 years, Khanh was able to nurture her passion upon several art competitions, both in school and around HCMC, earning her an Award of Innovative Idea during 9th grade. Having her focus shift into filmmaking, Khanh decided to further challenge herself with the IB Diploma program at EF Academy New York in the last two years of high school. As a senior, she was nominated for IB Visual Arts HL and IB Psychology SL Student of the Year (with winning the latter one), both of which have greatly contributed to her perspective and skills on her learning journey as a filmmaker. In her free time, she can be found exploring the complexity of human’s mind and behavior artistically through photography, film editing/reviewing as well as graphic design. Khanh is currently a freshman at School of the Art Institute Chicago pursuing a BFA in Film.
+<br>
+      <br><hr class="rounded"><br>
+      <br><img src="lh_suit_still.jpg" alt="diagram of three veiws - front side, front/side angle, side - of a man in a suit, a character in the film">
+      <h3>Lam Son Hoang</h3> <br>Lam Hoang was born and raised in Vietnam and he is currently studying in Chicago, USA. He started his film and animation journey in 2018 and going to graduate in 2022. His project is characterized by the use of story, emotion, and internal reflections, presented in high contrast theme. He also enjoys street and travel photography as a means of finding beauty in the mundane.<br>
+ <br><hr class="rounded"><br>     
+      <br><img src="Pg_still.jpg" alt="black and white image of a person, blurred"><br>
+      <h3>Philipp Groth</h3><br>Filmmaker and visual artist working between Chicago and Berlin. After studies at the University of the Arts London, “acte tm” was founded as his studio residence in Berlin, where he also teaches Film Production and Film Directing as a visiting lecturer at the Design Academy. In 2021, he was the recipient of the Dean Professional Development Award from The School of the Art Insitute of Chicago. In his practice he combines the form of narrative techniques and documentary with a spacial experience into imaginary journeys. In his film and sculpture work he is particularly interested in what it means to be a character and what it means to have a story.
+<br>
+  <br><hr class="rounded"><br>    
+      <br><br><img src="M_still.jpg" alt="illustration of a woman, close up portrait, dark hair red lips, distressed">
+     <h3>Madelaine</h3><br>Born and raised in the Bay Area, Madelaine Guthrie exists between the hippie and workaholic mindsets all San Franciscans strive for. Throughout her life, drawing, writing, acting, and filmmaking have defined her. Guthrie's passion for storytelling has driven her forward into the world of the arts. She is currently studying film at the School of the Art Institute of Chicago, and once she graduates in 2022 she plans to become everyone's problem.<br>
+  <br>
+      
+      <hr class="rounded"><br>    
+      <br><br><img src="ehj_still.JPG" alt="man standing in a hall, low quiality pixels, fuzzy, dreamy">
+        <h3>Elisabeth James</h3><br>I am a senior undergrad at SAIC, practicing as an experimental filmmaker and sound designer.<br><br>
+  <br><hr class="rounded"><br>    
+      <br><br><img src="jj_still.png" alt="image of a person from above, bloodied, wearing a grey sweatshirt, looking at the camera from their positon on their back">
+        <h3>Jazmyn Joi</h3> <br>My name is Jazmyn Joi Hill, I am a student at SAIC in the Film and Video department that dabbles in Sound Production and Photography. My creative ideas do not usually manifest in a structured manner. My ideas seem to manifest the most in times of great distress or sometimes mass euphoria. For me, it is all about the mood and the impact; the lighting and ambiance sets the tone, allowing me to capture the raw image I see in my mind. During covid the lack of connection to not only friends and family but the world made creating script based works that include actors harder to do. This turned my focus into things I could do at home more easily which brought my focus to collage based ideas where I was able to take various images or footage and create a new meaning/understanding through this presentation.<br><br>
+      
+ <br><hr class="rounded"><br>  
+      
+      <br><img src="still2kLiu.jpg" alt="abstract image of a lens - there is green a blue but it is unclear">
+      <h3>Kris Liu</h3><br>I'm Kris, a messy story teller. I love Kentucky Route Zero. I can't take violence in films very well unless it's done in a reasonable way. <br>
+ <br><hr class="rounded"><br>   
+      
+      <br>  
+      
+      <img src="mdw_still.png" alt="joy, friends sititng around a table - presented on a mac destop with a tool bar at the bottom">
+      <br>
+      <br><br>
+      <h3 id="A1">Meadow Meyer</h3><br>Meadow Meyer is an undergraduate at SAIC  studying to get their BFAW. They use all pronouns. Meadow is a lesbian, Pisces, writer, actor, drag king and artist. She loves her cat Pixie and dancing!<br>
+ <br><hr class="rounded"><br>   
+      
+      <img src="jp_still.JPG" alt="two blonde humans, in eachother's arms">
+      <h3>Jake Phillips</h3>
+      If being trans were a choice, there would be no trans people.<br>
+      <hr class="rounded"><br>     
+      <br>
+     
+      
+      <img src="ZQ_still.jpeg" alt="glitchy image of a girl blowing up a balloon">
+      <br>
+          <h3>Zihan Qiu</h3> She is a sisty-year-old woman with a long face, a high nose bridge, thin lips, and sunken cheeks which make her cheekbones stand out. Her hair is very short, just above the top of her ears, and there is a pair of green earrings dangling under her earlobes. Her eyebrows are sparse, always drooping slightly, which make her seem a bit frustrating. The most prominent part of her face is her eyes. The eyes are filled with sharp light like blades even though the canthus is slashed with fine winkles. This kind of light was hidden while her eyelids were drooping, but most of the time, she stares at the pedestrians passing by. It is a gaze that does not contain any maliciousness. If you observe carefully, it may contain a certain amount of curiosity. Although she is a short woman and often squats on the overpass, her pure and unreserved gaze can even make passers-by who look at her look away.<br><br>
+ <br><hr class="rounded">
+      <br><br><img src="mgs_still.jpg" alt="abstract background of red and green on black with a square of a blue and white graphic of a deity twoard the bottom center"><br>
+      <h3>Mo Gyeong Seong</h3><br>Mo Gyeong Seong was born. He continues to live with delusions of grandeur. <br>
+ <br><hr class="rounded"><br>  
+      
+      <br>  
+      
+      <img src="hs_still_glitch.png" alt="grey and creme glitched landscape">
+      <br>
+      <h3>Hatem Shakkouf</h3> <br>Hatem Shakkouf is a filmmaker born in Kuwait and originally from Syria. He came to Chicago in 2018 to peruse a bachelors degree in the fine arts with a Film/Video/New Media focus. At his time at the art institute he has learned to mix the abstract with narrative. Some of his more favored skills include Data moshing.<br>
+      
+    
+ <br><hr class="rounded"><br>  
+
+      <h3>Lee Schulder</h3>
+      
+<br><hr class="rounded"><br>
+      <br>  
+      
+      <img src="YZ_still.png" alt="abstract figure in black and white noise and static">
+      <br>
+      <h3>Yezhou Zheng</h3>
+      <br>I make videos. <br>
+      <br>
+  
+  
+       <br>
+      
+    </div>
+  </div>
+    
+  <div class="footer">
+    <marquee direction="right" scrollamount="3"><p>PREMIERE  = DECEMBER 16TH @@ 8AM EST. &lt;&lt;&lt;&lt; PREMIERE  = DECEMBER 16TH @@ 8AM EST.  &lt;&lt;&lt;&lt; PREMIERE  = DECEMBER 16TH @@ 8AM EST. &lt;&lt;&lt;&lt; PREMIERE  = DECEMBER 16TH @@ 8AM EST. &lt;&lt;&lt;&lt; PREMIERE  = DECEMBER 16TH @@ 8AM EST. &lt;&lt;&lt;&lt; PREMIERE  = DECEMBER 16TH @@ 8AM EST. &lt;&lt;&lt;&lt; PREMIERE  = DECEMBER 16TH @@ 8AM EST. &lt;&lt;&lt;&lt; PREMIERE  = DECEMBER 16TH @@ 8AM EST. &lt;&lt;&lt;&lt;  </p></marquee>
+</div>
+    
+    <script>function myFunction() {
+
+            var btn = document.getElementById("myButton");
+            //to make it fancier
+            if (btn.value == "ABOUT THE COURSE") {
+                btn.value = "ABOUT THE COURSE";
+                btn.innerHTML = "ABOUT THE COURSE";
+            }
+            else {
+                btn.value = "ABOUT THE COURSE";
+                btn.innerHTML = "ABOUT THE COURSE";
+            }
+            //this is what you're looking for
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+	</body>
+</html>
